@@ -329,6 +329,31 @@ main {
       & > div {
         width: 46%;
         margin: 2rem 0;
+        .row {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          & > div {
+            $h: 8px;
+            position: relative;
+            height: $h;
+            width: 100%;
+            border: 1px solid #eee;
+            transition: all 300ms;
+            &::after {
+              content: "";
+              position: absolute;
+              background: rgba($color: #006600, $alpha: 0.8);
+              width: var(--value);
+              height: $h;
+            }
+          }
+          p {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+          }
+        }
       }
       h3 {
         display: flex;
@@ -375,6 +400,12 @@ main {
               cursor: pointer;
               padding: 1rem 2rem;
               width: max-content;
+              user-select: none;
+              border: 1px solid #e9c782;
+              background: linear-gradient(0deg, #e9c782, #fff9b2, #e9c782);
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+              min-width: 120px;
+              color: #888;
               & > * {
                 pointer-events: none;
               }
